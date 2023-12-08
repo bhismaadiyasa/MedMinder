@@ -70,12 +70,13 @@ import com.example.medminder5.R
 
 @Composable
 fun UpdateObatFormPage(viewModel: ObatViewModel, navController: NavHostController) {
-    var nama by remember { mutableStateOf("") }
-    var hari by remember { mutableStateOf("") }
-    var deskripsi by remember { mutableStateOf("") }
-    var jam by remember { mutableStateOf("") }
-
     val obatChosen = viewModel.getSelectedObat()
+
+    var nama by remember { mutableStateOf(obatChosen.nama) }
+    var hari by remember { mutableStateOf(obatChosen.hari) }
+    var deskripsi by remember { mutableStateOf(obatChosen.deskripsi) }
+    var jam by remember { mutableStateOf(obatChosen.jam) }
+
 
     val context = LocalContext.current
     val successMessage = "Obat berhasil diperbarui"
